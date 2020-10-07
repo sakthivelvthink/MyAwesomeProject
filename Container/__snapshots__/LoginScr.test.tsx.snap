@@ -21,7 +21,7 @@ exports[`SnapShot login Page renders correctly 1`] = `
     }
   >
     <Text
-      testID="messageText"
+      testID="counter"
     >
       WelCome
     </Text>
@@ -38,8 +38,9 @@ exports[`SnapShot login Page renders correctly 1`] = `
       allowFontScaling={true}
       maxLength={11}
       onChangeText={[Function]}
-      placeholder="PASSWORD"
+      placeholder="Password"
       rejectResponderTermination={true}
+      testID="password"
       underlineColorAndroid="transparent"
       value=""
     />
@@ -81,6 +82,51 @@ exports[`SnapShot login Page renders correctly 1`] = `
           }
         >
           Submit
+        </Text>
+      </View>
+    </View>
+    <View
+      accessibilityRole="button"
+      accessibilityState={Object {}}
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID="refreshButton"
+    >
+      <View
+        style={
+          Array [
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#007AFF",
+                "fontSize": 18,
+                "margin": 8,
+                "textAlign": "center",
+              },
+              Object {
+                "color": "#000000",
+              },
+            ]
+          }
+        >
+          Refresh
         </Text>
       </View>
     </View>

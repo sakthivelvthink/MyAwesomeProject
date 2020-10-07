@@ -1,7 +1,12 @@
 import React from 'react';
 import Login from './LoginScr';
 import renderer from 'react-test-renderer'
-import {render} from "enzyme"
+import {shallow} from "enzyme"
+import {render, cleanup, fireEvent,waitForElement } from '@testing-library/react';
+const Enzyme = require('enzyme');
+const EnzymeAdapter = require('enzyme-adapter-react-16');
+// Setup enzyme's react adapter
+Enzyme.configure({ adapter: new EnzymeAdapter() });
 
 describe('SnapShot login Page', () => {
     it('renders correctly', () => {
@@ -12,31 +17,8 @@ describe('SnapShot login Page', () => {
     });
   });
 
-describe('Email State Check', () => {
-    test('It Should Change the state of the email', () => {
-        const instanceOf = renderer.create(<Login />).getInstance();
-        if (instanceOf !== null){
-        instanceOf.handleInputChange("sakthi@gmail.com")
-        expect(instanceOf.state.email).toEqual("sakthi@gmail.com")
-        expect(instanceOf.state.email).not.toEqual(null)
-        }
-    })
-})
-// describe('Test case text input', () => {
-//     test('email valid email check', () => {
-//         const instanceOf = renderer.create(<Login />).getInstance();
-//         instanceOf.handleInputChange("sakthi@gmail.com")
-//         expect(instanceOf.state.email).toEqual("sakthi@gmail.com")
-//     })
-// })
-// describe('Hello', () => {
-//     it('displays the passed-in name', () => {
-//         const { queryByText } = render(<Login />);
-//         expect(queryByText('WelCome')).not.toBeNull();
-//     });
-// });
 
-// Finding Element is present or not present
+  // Finding Email text Field is present
 
 let findElement = function(tree:any,element:any){
     debugger
@@ -51,13 +33,14 @@ for (let node in tree.children){
 }
 return result
 }
-it ("findElement", () =>{
+it ("Check Email Text filed is present", () =>{
 let tree = renderer.create(<Login/>).toJSON()
 expect(findElement(tree,"email")).toBeDefined()
 })
 
 
-// Check PlaceHolder
+
+// Validate the Placeholder of the email text field
 
 let checkPlaceHolder = function(tree:any,element:any){
     debugger
@@ -74,7 +57,94 @@ for (let node in tree.children){
 }
 return result
 }
-it ("Check PlaceHolder", () =>{
+it ("Validate the Placeholder of the email text field", () =>{
 let tree = renderer.create(<Login/>).toJSON()
 expect(checkPlaceHolder(tree,"Email")).toBeDefined()
 })
+
+
+ // Finding Password text Field is present
+
+ let findPassWordElement = function(tree:any,element:any){
+    debugger
+var result = undefined
+for (let node in tree.children){
+    
+    for (let newnode in tree.children[node].children){
+    if (tree.children[node].children[newnode].props.testID == element){
+        result = true
+    }
+}
+}
+return result
+}
+it ("Finding Password text Field is present", () =>{
+let tree = renderer.create(<Login/>).toJSON()
+expect(findPassWordElement(tree,"password")).toBeDefined()
+})
+
+
+
+// Validate the placeHolder of the password text field
+
+let checkPasswordPlaceHolder = function(tree:any,element:any){
+    debugger
+
+var result = undefined
+for (let node in tree.children){
+    
+    for (let newnode in tree.children[node].children){
+        
+    if (tree.children[node].children[newnode].props.placeholder == element){
+        result = true
+    }
+}
+}
+return result
+}
+it ("Validate the placeHolder of the password text field", () =>{
+let tree = renderer.create(<Login/>).toJSON()
+expect(checkPasswordPlaceHolder(tree,"Password")).toBeDefined()
+})
+
+it('should render without throwing an error', function() {
+    const wrapper = shallow(<Login/>);
+    wrapper.dive().find("[testID='refreshButton']").simulate("press");
+  });
+// // Button click Action
+// it('increments counter after 0.5s', async () => {
+//     const { getByTestId, getByText } = render(<Login/>); 
+
+//     fireEvent.click(getByTestId('button-up'))
+
+//     const counter = await waitForElement(() => getByText('1')) 
+
+//     expect(counter).tohavetext
+//   });
+// describe('Email State Check', () => {
+//     test('It Should Change the state of the email', () => {
+//         const instanceOf = renderer.create(<Login />).getInstance();
+//         if (instanceOf !== null){
+//         instanceOf.handleInputChange("sakthi@gmail.com")
+//         expect(instanceOf.state.email).toEqual("sakthi@gmail.com")
+//         expect(instanceOf.state.email).not.toEqual(null)
+//         }
+//     })
+// })
+// describe('Test case text input', () => {
+//     test('email valid email check', () => {
+//         const instanceOf = renderer.create(<Login />).getInstance();
+//         instanceOf.handleInputChange("sakthi@gmail.com")
+//         expect(instanceOf.state.email).toEqual("sakthi@gmail.com")
+//     })
+// })
+// describe('Hello', () => {
+//     it('displays the passed-in name', () => {
+//         const { queryByText } = render(<Login />);
+//         expect(queryByText('WelCome')).not.toBeNull();
+//     });
+// });
+
+
+
+

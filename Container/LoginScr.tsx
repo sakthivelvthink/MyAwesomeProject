@@ -22,11 +22,14 @@ export default class LoginScr extends React.Component{
       this.setState({ isLogined: true });
     }
   }
+  refreshData = () => {
+
+  }
   render() {
     return (
       <View style={styles.container}>
                     <View style={styles.form}>
-                      <Text testID="messageText">WelCome</Text>
+                      <Text testID="counter">WelCome</Text>
         <TextInput
           value={this.state.email}
           onChangeText={this.handleInputChange}
@@ -36,10 +39,17 @@ export default class LoginScr extends React.Component{
         <TextInput
           value={this.state.password}
           onChangeText = {(text:any) => this.handleInputChange(text)}
-          placeholder="PASSWORD"
+          placeholder="Password"
+          testID = "password"
           maxLength={11}
         />
         <Button title = "Submit"  onPress={this.submitClick}> Submit</Button>
+        <Button
+          onPress={this.refreshData}
+          title="Refresh"
+          color="#000000"
+          testID="refreshButton"
+        />
         </View> 
         </View>);
   }

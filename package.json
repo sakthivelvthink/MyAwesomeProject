@@ -10,7 +10,9 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@testing-library/react": "^11.0.4",
     "@types/enzyme": "^3.10.7",
+    "jest-html-reporter": "^3.2.0",
     "react": "16.13.1",
     "react-native": "0.63.3"
   },
@@ -51,6 +53,17 @@
       "\\.snap$",
       "<rootDir>/node_modules/"
     ],
-    "cacheDirectory": ".jest/cache"
+    "cacheDirectory": ".jest/cache",
+    "reporters": [
+      "default",
+      [
+        "./node_modules/jest-html-reporter",
+        {
+          "pageTitle": "Test Report",
+          "includeFailureMsg": true,
+          "includeSuiteFailure": true
+        }
+      ]
+    ]
   }
 }

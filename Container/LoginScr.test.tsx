@@ -107,9 +107,26 @@ let tree = renderer.create(<Login/>).toJSON()
 expect(checkPasswordPlaceHolder(tree,"Password")).toBeDefined()
 })
 
-it('should render without throwing an error', function() {
+// Check Weather the button press action Performed
+it('Check Weather the button press action Performed', function() {
     const wrapper = shallow(<Login/>);
     wrapper.dive().find("[testID='refreshButton']").simulate("press");
+  });
+
+
+  it('should render without throwing an error', function() {
+    const wrapper = shallow(<Login/>);
+   
+    wrapper.dive().find("[testID='refreshButton']").simulate("press");
+    
+  });
+
+  it('should render without throwing an error', function() {
+    const wrapper = shallow(<Login />);
+    const refreshData = jest.spyOn(wrapper.instance(), "forceUpdate");
+    wrapper.update();
+    wrapper.dive().find("[testID='refreshButton']").simulate("press");
+    expect(refreshData).toHaveBeenCalledTimes(1);
   });
 // // Button click Action
 // it('increments counter after 0.5s', async () => {
@@ -123,7 +140,7 @@ it('should render without throwing an error', function() {
 //   });
 // describe('Email State Check', () => {
 //     test('It Should Change the state of the email', () => {
-//         const instanceOf = renderer.create(<Login />).getInstance();
+//         const instanceOf = renderer.create(<Login/>).getInstance();
 //         if (instanceOf !== null){
 //         instanceOf.handleInputChange("sakthi@gmail.com")
 //         expect(instanceOf.state.email).toEqual("sakthi@gmail.com")

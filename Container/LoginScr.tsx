@@ -23,7 +23,7 @@ export default class LoginScr extends React.Component{
     }
   }
   refreshData = () => {
-
+    console.log("download data from server placeholder");
   }
   render() {
     return (

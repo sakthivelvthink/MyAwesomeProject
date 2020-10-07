@@ -10,6 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@types/enzyme": "^3.10.7",
     "react": "16.13.1",
     "react-native": "0.63.3"
   },
@@ -17,11 +18,14 @@
     "@babel/core": "^7.11.6",
     "@babel/runtime": "^7.11.2",
     "@react-native-community/eslint-config": "^2.0.0",
+    "@testing-library/react-native": "^7.0.2",
     "@types/jest": "^26.0.14",
     "@types/react": "^16.9.51",
     "@types/react-native": "^0.63.25",
     "@types/react-test-renderer": "^16.9.3",
     "babel-jest": "^26.5.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
     "eslint": "^7.10.0",
     "jest": "^26.5.0",
     "metro-react-native-babel-preset": "^0.63.0",

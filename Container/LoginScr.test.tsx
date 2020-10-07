@@ -121,13 +121,13 @@ it('Check Weather the button press action Performed', function() {
     
   });
 
-  it('should render without throwing an error', function() {
-    const wrapper = shallow(<Login />);
-    const refreshData = jest.spyOn(wrapper.instance(), "forceUpdate");
-    wrapper.update();
-    wrapper.dive().find("[testID='refreshButton']").simulate("press");
-    expect(refreshData).toHaveBeenCalledTimes(1);
-  });
+//   it('should render without throwing an error', function() {
+//     const wrapper = shallow(<Login />);
+//     const refreshData = jest.spyOn(wrapper.instance(), "forceUpdate");
+//     wrapper.update();
+//     wrapper.dive().find("[testID='refreshButton']").simulate("press");
+//     expect(refreshData).toHaveBeenCalledTimes(1);
+//   });
 // // Button click Action
 // it('increments counter after 0.5s', async () => {
 //     const { getByTestId, getByText } = render(<Login/>); 

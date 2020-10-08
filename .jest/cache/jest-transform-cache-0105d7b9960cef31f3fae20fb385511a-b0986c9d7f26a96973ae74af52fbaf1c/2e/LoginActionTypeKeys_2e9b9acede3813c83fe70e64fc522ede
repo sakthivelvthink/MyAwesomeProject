@@ -1,0 +1,25 @@
+c45066419042543e581dcdc86adece14
+"use strict";
+/**
+ * Login Action Keys for identify the action type
+ *
+ * @version 1.0.0
+ * @author [Kumaresan Periyasamy](http://192.168.1.22:8080/Kumaresan)
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LoginActionTypeStates = void 0;
+var LoginActionTypeStates;
+(function (LoginActionTypeStates) {
+    LoginActionTypeStates["INPROGRESS"] = "_INPROGRESS";
+    LoginActionTypeStates["SUCCESS"] = "_SUCCESS";
+    LoginActionTypeStates["FAIL"] = "_FAIL";
+})(LoginActionTypeStates = exports.LoginActionTypeStates || (exports.LoginActionTypeStates = {}));
+var LoginActionTypeKeys;
+(function (LoginActionTypeKeys) {
+    LoginActionTypeKeys["ADD_AWS_TOKEN"] = "ADD_AWS_TOKEN";
+    LoginActionTypeKeys["SHOW_LOADER"] = "SHOW_LOADER";
+    LoginActionTypeKeys["CLEAR_PROPS"] = "CLEAR_PROPS";
+    LoginActionTypeKeys["CHANGE_USERNAME_PASSWORD"] = "CHANGE_USERNAME_PASSWORD";
+})(LoginActionTypeKeys || (LoginActionTypeKeys = {}));
+exports.default = LoginActionTypeKeys;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL1VzZXJzL3Nha3RoaXZlbC9Eb2N1bWVudHMvR2l0SHViL015QXdlc29tZVByb2plY3QvY29yZS9sb2dpbi9hY3Rpb25zL0xvZ2luQWN0aW9uVHlwZUtleXMudHN4IiwibWFwcGluZ3MiOiI7QUFBQTs7Ozs7R0FLRzs7O0FBR0gsSUFBWSxxQkFJWDtBQUpELFdBQVkscUJBQXFCO0lBQzdCLG1EQUEwQixDQUFBO0lBQzFCLDZDQUFvQixDQUFBO0lBQ3BCLHVDQUFjLENBQUE7QUFDbEIsQ0FBQyxFQUpXLHFCQUFxQixHQUFyQiw2QkFBcUIsS0FBckIsNkJBQXFCLFFBSWhDO0FBRUQsSUFBSyxtQkFLSjtBQUxELFdBQUssbUJBQW1CO0lBQ3BCLHNEQUErQixDQUFBO0lBQy9CLGtEQUEyQixDQUFBO0lBQzNCLGtEQUEyQixDQUFBO0lBQzNCLDRFQUFxRCxDQUFBO0FBQ3pELENBQUMsRUFMSSxtQkFBbUIsS0FBbkIsbUJBQW1CLFFBS3ZCO0FBRUQsa0JBQWUsbUJBQW1CLENBQUMiLCJuYW1lcyI6W10sInNvdXJjZXMiOlsiL1VzZXJzL3Nha3RoaXZlbC9Eb2N1bWVudHMvR2l0SHViL015QXdlc29tZVByb2plY3QvY29yZS9sb2dpbi9hY3Rpb25zL0xvZ2luQWN0aW9uVHlwZUtleXMudHN4Il0sInNvdXJjZXNDb250ZW50IjpbIi8qKlxuICogTG9naW4gQWN0aW9uIEtleXMgZm9yIGlkZW50aWZ5IHRoZSBhY3Rpb24gdHlwZVxuICpcbiAqIEB2ZXJzaW9uIDEuMC4wXG4gKiBAYXV0aG9yIFtLdW1hcmVzYW4gUGVyaXlhc2FteV0oaHR0cDovLzE5Mi4xNjguMS4yMjo4MDgwL0t1bWFyZXNhbilcbiAqL1xuXG5cbmV4cG9ydCBlbnVtIExvZ2luQWN0aW9uVHlwZVN0YXRlcyB7XG4gICAgSU5QUk9HUkVTUyA9IFwiX0lOUFJPR1JFU1NcIixcbiAgICBTVUNDRVNTID0gXCJfU1VDQ0VTU1wiLFxuICAgIEZBSUwgPSBcIl9GQUlMXCJcbn1cblxuZW51bSBMb2dpbkFjdGlvblR5cGVLZXlzIHtcbiAgICBBRERfQVdTX1RPS0VOID0gXCJBRERfQVdTX1RPS0VOXCIsXG4gICAgU0hPV19MT0FERVIgPSBcIlNIT1dfTE9BREVSXCIsXG4gICAgQ0xFQVJfUFJPUFMgPSBcIkNMRUFSX1BST1BTXCIsXG4gICAgQ0hBTkdFX1VTRVJOQU1FX1BBU1NXT1JEID0gXCJDSEFOR0VfVVNFUk5BTUVfUEFTU1dPUkRcIlxufVxuXG5leHBvcnQgZGVmYXVsdCBMb2dpbkFjdGlvblR5cGVLZXlzOyJdLCJ2ZXJzaW9uIjozfQ==

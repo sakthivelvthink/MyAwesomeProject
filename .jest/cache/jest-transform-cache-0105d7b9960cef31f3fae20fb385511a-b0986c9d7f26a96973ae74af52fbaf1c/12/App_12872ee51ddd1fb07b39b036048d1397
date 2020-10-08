@@ -1,0 +1,41 @@
+a2a720075a50f0a24273a2b62a3ad538
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(require("react"));
+var redux_1 = require("redux");
+var LoginScr_1 = __importDefault(require("./Container/LoginScr"));
+var react_redux_1 = require("react-redux");
+var redux_thunk_1 = __importDefault(require("redux-thunk"));
+var index_1 = __importDefault(require("./core/index"));
+var store = redux_1.createStore(index_1.default, redux_1.applyMiddleware(redux_thunk_1.default));
+var App = /** @class */ (function (_super) {
+    __extends(App, _super);
+    function App() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    App.prototype.componentWillMount = function () {
+    };
+    App.prototype.render = function () {
+        return (react_1.default.createElement(react_redux_1.Provider, { store: store },
+            react_1.default.createElement(LoginScr_1.default, null)));
+    };
+    return App;
+}(react_1.default.Component));
+exports.default = App;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL1VzZXJzL3Nha3RoaXZlbC9Eb2N1bWVudHMvR2l0SHViL015QXdlc29tZVByb2plY3QvQXBwLnRzeCIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQSxnREFBMEI7QUFHMUIsK0JBQW9EO0FBQ3BELGtFQUF3QztBQUN4QywyQ0FBdUM7QUFDdkMsNERBQWdDO0FBQ2hDLHVEQUF1QztBQUt2QyxJQUFNLEtBQUssR0FBRyxtQkFBVyxDQUN2QixlQUFXLEVBQ1gsdUJBQWUsQ0FBQyxxQkFBSyxDQUFDLENBQ3ZCLENBQUM7QUFDRjtJQUFpQyx1QkFBc0I7SUFBdkQ7O0lBY0EsQ0FBQztJQVpDLGdDQUFrQixHQUFsQjtJQUVBLENBQUM7SUFDRCxvQkFBTSxHQUFOO1FBQ0UsT0FBTyxDQUNMLDhCQUFDLHNCQUFRLElBQUMsS0FBSyxFQUFFLEtBQUs7WUFDdEIsOEJBQUMsa0JBQUssT0FBRyxDQUNBLENBQ1QsQ0FBQTtJQUdKLENBQUM7SUFDSCxVQUFDO0FBQUQsQ0FBQyxBQWRELENBQWlDLGVBQUssQ0FBQyxTQUFTLEdBYy9DIiwibmFtZXMiOltdLCJzb3VyY2VzIjpbIi9Vc2Vycy9zYWt0aGl2ZWwvRG9jdW1lbnRzL0dpdEh1Yi9NeUF3ZXNvbWVQcm9qZWN0L0FwcC50c3giXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7IFZpZXd9IGZyb20gJ3JlYWN0LW5hdGl2ZSc7XG5pbXBvcnQge0hlbGxvfSBmcm9tICcuL0NvbXBvbmVudC9IZWxsbydcbmltcG9ydCB7IGNyZWF0ZVN0b3JlLGFwcGx5TWlkZGxld2FyZSB9IGZyb20gJ3JlZHV4JztcbmltcG9ydCBMb2dpbiBmcm9tIFwiLi9Db250YWluZXIvTG9naW5TY3JcIlxuaW1wb3J0IHsgUHJvdmlkZXIgfSBmcm9tICdyZWFjdC1yZWR1eCc7XG5pbXBvcnQgdGh1bmsgZnJvbSAncmVkdXgtdGh1bmsnO1xuaW1wb3J0IHJvb3RSZWR1Y2VyIGZyb20gJy4vY29yZS9pbmRleCc7XG4vLyBpbXBvcnQgcm9vdFJlZHVjZXIgZnJvbSAnLi9jb3JlL2luZGV4JztcbmludGVyZmFjZSBTdGF0ZSB7XG5cbn1cbmNvbnN0IHN0b3JlID0gY3JlYXRlU3RvcmUoXG4gIHJvb3RSZWR1Y2VyLFxuICBhcHBseU1pZGRsZXdhcmUodGh1bmspXG4pO1xuZXhwb3J0IGRlZmF1bHQgY2xhc3MgQXBwIGV4dGVuZHMgUmVhY3QuQ29tcG9uZW50PFN0YXRlPiB7XG4gXG4gIGNvbXBvbmVudFdpbGxNb3VudCgpIHtcbiAgXG4gIH1cbiAgcmVuZGVyKCl7XG4gICAgcmV0dXJuIChcbiAgICAgIDxQcm92aWRlciBzdG9yZT17c3RvcmV9PlxuICAgICAgPExvZ2luIC8+XG4gICAgPC9Qcm92aWRlcj5cbiAgICAgKSBcbiAgICAgICAgXG4gICAgICAgXG4gIH1cbn1cblxuXG4iXSwidmVyc2lvbiI6M30=

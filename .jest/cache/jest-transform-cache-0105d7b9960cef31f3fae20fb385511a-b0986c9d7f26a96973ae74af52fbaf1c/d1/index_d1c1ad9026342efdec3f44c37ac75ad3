@@ -1,0 +1,14 @@
+6d4113132dc2af459fe3d5616393ff17
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var redux_1 = require("redux");
+var LoginReducers_1 = __importDefault(require("./login/reducers/LoginReducers"));
+// Create the root reducer
+var rootReducer = redux_1.combineReducers({
+    loginState: LoginReducers_1.default,
+});
+exports.default = rootReducer;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL1VzZXJzL3Nha3RoaXZlbC9Eb2N1bWVudHMvR2l0SHViL015QXdlc29tZVByb2plY3QvY29yZS9pbmRleC50c3giLCJtYXBwaW5ncyI6Ijs7Ozs7QUFDQSwrQkFBd0M7QUFDeEMsaUZBQTBEO0FBQzFELDBCQUEwQjtBQUMxQixJQUFNLFdBQVcsR0FBRyx1QkFBZSxDQUFDO0lBQ2hDLFVBQVUsRUFBRSx1QkFBWTtDQUMzQixDQUFDLENBQUM7QUFFSCxrQkFBZSxXQUFXLENBQUMiLCJuYW1lcyI6W10sInNvdXJjZXMiOlsiL1VzZXJzL3Nha3RoaXZlbC9Eb2N1bWVudHMvR2l0SHViL015QXdlc29tZVByb2plY3QvY29yZS9pbmRleC50c3giXSwic291cmNlc0NvbnRlbnQiOlsiXG5pbXBvcnQgeyBjb21iaW5lUmVkdWNlcnMgfSBmcm9tIFwicmVkdXhcIjtcbmltcG9ydCBMb2dpblJlZHVjZXIgZnJvbSBcIi4vbG9naW4vcmVkdWNlcnMvTG9naW5SZWR1Y2Vyc1wiO1xuLy8gQ3JlYXRlIHRoZSByb290IHJlZHVjZXJcbmNvbnN0IHJvb3RSZWR1Y2VyID0gY29tYmluZVJlZHVjZXJzKHtcbiAgICBsb2dpblN0YXRlOiBMb2dpblJlZHVjZXIsXG59KTtcblxuZXhwb3J0IGRlZmF1bHQgcm9vdFJlZHVjZXI7Il0sInZlcnNpb24iOjN9

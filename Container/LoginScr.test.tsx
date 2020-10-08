@@ -2,8 +2,6 @@ import React from 'react';
 import Login from './LoginScr';
 import renderer from 'react-test-renderer'
 import {shallow} from "enzyme"
-import '@testing-library/jest-dom'
-import '@testing-library/jest-dom/extend-expect'
 import { cleanup, fireEvent,waitForElement } from '@testing-library/react';
 import { render } from "@testing-library/react-native";
 import sinon from 'sinon';
@@ -64,7 +62,7 @@ return result
 }
 it ("Validate the Placeholder of the email text field", () =>{
 let tree = renderer.create(<Login/>).toJSON()
-console.log("get details",tree)
+
 expect(checkPlaceHolder(tree,"Email")).toBeDefined()
 })
 
@@ -128,12 +126,12 @@ it('Check Weather the button press action Performed', function() {
   });
 
 
-  it('Button Click Check', () => {
-    const refreshData = jest.fn();
-    const wrapper = shallow(<Login/>);
-    wrapper.dive().find("[testID='refreshButton']").simulate("press");
-    expect(refreshData).toHaveBeenCalledTimes(1);
-  })
+//   it('Button Click Check', () => {
+    // const refreshData = jest.fn();
+    // const wrapper = shallow(<Login/>);
+    // wrapper.dive().find("[testID='refreshButton']").simulate("press");
+    // expect(refreshData).toHaveBeenCalledTimes(1);
+//   })
   // it('should render without throwing an error', function() {
   //   const wrapper = shallow(<Login />);
   //   // console.log("should render without throwing an error",wrapper)
@@ -153,19 +151,19 @@ it('Check Weather the button press action Performed', function() {
 
 //     expect(counter).tohavetext
 //   });
-describe('Email State Check', () => {
-    test('It Should Change the state of the email', () => {
-        const instanceOf = renderer.create(<Login/>).getInstance();
-        if (instanceOf !== null){
-           if (instanceOf.handleInputChange("") !== undefined) {
+// describe('Email State Check', () => {
+//     test('It Should Change the state of the email', () => {
+//         const instanceOf = renderer.create(<Login/>).getInstance();
+//         if (instanceOf !== null){
+//            if (instanceOf.handleInputChange("") !== undefined) {
 
-            }
-        instanceOf.handleInputChange("sakthi@gmail.com")
-        expect(instanceOf.state.email).toEqual("sakthi@gmail.com")
-        expect(instanceOf.state.email).not.toEqual(null)
-        }
-    })
-})
+//             }
+//         instanceOf.handleInputChange("sakthi@gmail.com")
+//         expect(instanceOf.state.email).toEqual("sakthi@gmail.com")
+//         expect(instanceOf.state.email).not.toEqual(null)
+//         }
+//     })
+// })
 // describe('Test case text input', () => {
 //     test('email valid email check', () => {
 //         const instanceOf = renderer.create(<Login />).getInstance();
@@ -180,6 +178,12 @@ describe('Email State Check', () => {
 //     });
 // });
 
-
+it('calls click event', () => {
+    const FakeFun = jest.spyOn(Login.prototype, 'submitClick');
+    const component = shallow((<Login />));
+    component.dive().find("[testID='refreshButton']").simulate("press");
+    component.update();
+    expect(FakeFun).toHaveBeenCalledTimes(1);
+  });
 
 

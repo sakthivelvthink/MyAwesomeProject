@@ -61,6 +61,7 @@ exports[`SnapShot login Page renders correctly 1`] = `
           "opacity": 1,
         }
       }
+      testID="refreshButton"
     >
       <View
         style={
@@ -102,7 +103,6 @@ exports[`SnapShot login Page renders correctly 1`] = `
           "opacity": 1,
         }
       }
-      testID="refreshButton"
     >
       <View
         style={

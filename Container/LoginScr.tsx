@@ -17,10 +17,11 @@ export default class LoginScr extends React.Component{
       email: text
     })
   }
-  submitClick = () => {
-    if ((this.state.email == "krishankantsinghal") && (this.state.password == "krishankant123")) {
-      this.setState({ isLogined: true });
-    }
+  submitClick  ()  {
+    // if ((this.state.email == "krishankantsinghal") && (this.state.password == "krishankant123")) {
+    //   this.setState({ isLogined: true });
+    // }
+    console.log("########################################");
   }
   refreshData = () => {
     console.log("download data from server placeholder");
@@ -43,12 +44,11 @@ export default class LoginScr extends React.Component{
           testID = "password"
           maxLength={11}
         />
-        <Button title = "Submit"  onPress={this.submitClick}> Submit</Button>
+        <Button title = "Submit" testID="refreshButton" onPress={this.submitClick}> Submit</Button>
         <Button
           onPress={this.refreshData}
           title="Refresh"
           color="#000000"
-          testID="refreshButton"
         />
         </View> 
         </View>);

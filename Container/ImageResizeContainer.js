@@ -1,7 +1,9 @@
-import React from 'react';
-import { StyleSheet, View, Image, Text, PanResponder } from 'react-native';
-
+import React, { useRef } from 'react';
+import { StyleSheet, View, Image, Text, PanResponder, alert } from 'react-native';
+import MapView from 'react-native-maps';
+const Child = ({ setRef }) => <MapView type="text" ref={setRef} />;
 export default class ImageResizeContainer extends React.Component {
+    mapRef = React.createRef();
     oldImageLayout = {
         height: 200,
         width: 200,
@@ -53,7 +55,7 @@ export default class ImageResizeContainer extends React.Component {
         return (
             <View style={styles.MainContainer}>
 
-
+                <MapView ref={this.mapRef} />
                 <View>
 
                     <Text style={styles.text}>X: {this.state.locationX}, Y: {this.state.locationY}</Text>
@@ -72,15 +74,26 @@ export default class ImageResizeContainer extends React.Component {
     }
     onLayout = event => {
         if (this.state.dimensions) return // layout was already called
-        console.log("layout", event.nativeEvent.layout)
-        this.calculateCoordinatePoint(this.state.locationX,this.state.locationY,this.oldImageLayout,event.nativeEvent.layout)
-    }
-    calculateCoordinatePoint = (x, y,oldlayout,newlayout) => {
-        let rationOfWidth = oldlayout.width > newlayout.width ? oldlayout.width/newlayout.width : newlayout.width/oldlayout.width
-        let rationOfHeight = oldlayout.height > newlayout.height ? oldlayout.height/newlayout.height : newlayout.height/oldlayout.height
-   this.setState({locationX: oldlayout.width > newlayout.width ? x/rationOfWidth : x*rationOfWidth,locationY : oldlayout.height > newlayout.height ? y/rationOfHeight : y*rationOfHeight})
-    }
+        
+        this.calculateCoordinatePoint(this.state.locationX, this.state.locationY, this.oldImageLayout, event.nativeEvent.layout)
 
+        // this.mapRef.current.coordinateForPoint({ x: 100, y: 200 })
+        //     .then(coords =>console.log("lon: " + coords.longitude + ", lat: " + coords.latitude))
+        //     .catch(e => alert(e))
+    }
+    calculateCoordinatePoint = (x, y, oldlayout, newlayout) => {
+        let rationOfWidth = oldlayout.width > newlayout.width ? oldlayout.width / newlayout.width : newlayout.width / oldlayout.width
+        let rationOfHeight = oldlayout.height > newlayout.height ? oldlayout.height / newlayout.height : newlayout.height / oldlayout.height
+        this.setState({ locationX: oldlayout.width > newlayout.width ? x / rationOfWidth : x * rationOfWidth, locationY: oldlayout.height > newlayout.height ? y / rationOfHeight : y * rationOfHeight })
+        this.calculateLatLongOfThepoint(10,50,10,60,newlayout)
+    }
+    calculateLatLongOfThepoint = (minLat,maxlat,minlong,maxlong,newlayout) =>{
+        let minmaxLatDiff = maxlat - minLat
+        let minmaxLongDiff = maxlong - minlong
+        let ratioOfLatFromLocationY = minmaxLatDiff/newlayout.height
+        let ratioOfLongFromLocationX = minmaxLongDiff/newlayout.width
+        console.log("lat"+ ratioOfLatFromLocationY * this.state.locationY + "long"+ ratioOfLongFromLocationX * this.state.locationX)
+    }
 }
 
 const styles = StyleSheet.create(

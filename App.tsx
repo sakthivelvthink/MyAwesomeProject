@@ -3,6 +3,7 @@ import { View} from 'react-native';
 import {Hello} from './Component/Hello'
 import { createStore,applyMiddleware } from 'redux';
 import Login from "./Container/LoginScr"
+import ImageResizeContainer from "./Container/ImageResizeContainer"
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import rootReducer from './core/index';
@@ -22,7 +23,7 @@ export default class App extends React.Component<State> {
   render(){
     return (
       <Provider store={store}>
-      <Login />
+      <ImageResizeContainer/>
     </Provider>
      ) 
         

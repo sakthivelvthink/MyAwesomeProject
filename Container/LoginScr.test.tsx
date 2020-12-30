@@ -164,13 +164,13 @@ it('Check Weather the button press action Performed', function() {
 //         }
 //     })
 // })
-describe('Test case text input', () => {
-    test('email valid email check', () => {
-        const instanceOf = renderer.create(<Login />).getInstance();
-        instanceOf.handleInputChange("sakthi@gmail.com")
-        expect(instanceOf.state.email).toEqual("sakthi@gmail.com")
-    })
-})
+// describe('Test case text input', () => {
+//     test('email valid email check', () => {
+//         const instanceOf = renderer.create(<Login />).getInstance();
+//         instanceOf.handleInputChange("sakthi@gmail.com")
+//         expect(instanceOf.state.email).toEqual("sakthi@gmail.com")
+//     })
+// })
 // describe('Hello', () => {
 //     it('displays the passed-in name', () => {
 //         const { queryByText } = render(<Login />);

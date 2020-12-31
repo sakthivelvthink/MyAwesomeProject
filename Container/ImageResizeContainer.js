@@ -84,15 +84,17 @@ export default class ImageResizeContainer extends React.Component {
     calculateCoordinatePoint = (x, y, oldlayout, newlayout) => {
         let rationOfWidth = oldlayout.width > newlayout.width ? oldlayout.width / newlayout.width : newlayout.width / oldlayout.width
         let rationOfHeight = oldlayout.height > newlayout.height ? oldlayout.height / newlayout.height : newlayout.height / oldlayout.height
-        this.setState({ locationX: oldlayout.width > newlayout.width ? x / rationOfWidth : x * rationOfWidth, locationY: oldlayout.height > newlayout.height ? y / rationOfHeight : y * rationOfHeight })
-        this.calculateLatLongOfThepoint(10,50,10,60,newlayout)
+        let newLocationX = oldlayout.width > newlayout.width ? x / rationOfWidth : x * rationOfWidth
+        let newLocationY = oldlayout.height > newlayout.height ? y / rationOfHeight : y * rationOfHeight
+        this.setState({ locationX: newLocationX, locationY: newLocationY})
+        this.calculateLatLongOfThepoint(-10,50,10,60,newlayout,newLocationX,newLocationY)
     }
-    calculateLatLongOfThepoint = (minLat,maxlat,minlong,maxlong,newlayout) =>{
+    calculateLatLongOfThepoint = (minLat,maxlat,minlong,maxlong,newlayout,x,y) =>{
         let minmaxLatDiff = maxlat - minLat
         let minmaxLongDiff = maxlong - minlong
         let ratioOfLatFromLocationY = minmaxLatDiff/newlayout.height
         let ratioOfLongFromLocationX = minmaxLongDiff/newlayout.width
-        console.log("lat"+ ratioOfLatFromLocationY * this.state.locationY + "long"+ ratioOfLongFromLocationX * this.state.locationX)
+        console.log("lat"+ ratioOfLatFromLocationY * y + "long"+ ratioOfLongFromLocationX * x)
     }
 }
 
@@ -107,8 +109,8 @@ const styles = StyleSheet.create(
 
         childView:
         {
-            width: 600,
-            height: 600,
+            width: 500,
+            height: 500,
             marginTop: 10,
             backgroundColor: '#263238',
             overflow: 'hidden'
